@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>NubioAI</title>
+    <script src="popup.js"></script>
+    <style>
+      body {
+        font-family: sans-serif;
+        font-size: 14px;
+        margin: 0;
+        padding: 0;
+        border-radius: 10px !important;
+      }
+      .header {
+        display: flex;
+        height: 30px;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+        background-color: #07bc79;
+        color: #fff;
+      }
+      .chat-area {
+        height: 200px;
+        overflow-y: scroll;
+        padding: 10px;
+        background-color: #eff5f0;
+      }
+      .message-container {
+         display: flex;
+  flex-direction: column;
+  align-items: flex-end; /* changed from flex-start */
+  margin-bottom: 10px;
+      }
+      .message-container.from-user {
+        align-items: flex-end;
+      }
+      .message-bubble {
+        padding: 10px;
+        border-radius: 5px;
+        font-size: 14px;
+      }
+      .from-user .message-bubble {
+        display: inline-block;
+  max-width: 80%;
+  background-color: #03851f;
+  color: #ffffff;
+  padding: 10px;
+  border-radius: 20px;
+  margin-bottom: 10px;
+  word-wrap: break-word;
+  align-self: flex-end;
+}
+
+
+
+      .from-assistant .message-bubble {
+  background-color: #fff;
+  color: #000;
+  border: 1px solid #ccc;
+}
+
+
+      .highlighted-text {
+  padding: 10px;
+  height: 100px;
+  background-color: #ecfdee;
+  border-bottom: 1px solid#c3c3c3;
+}
+
+.highlighted-text h4 {
+  margin-top: 1px;
+}
+      .input-area {
+        display: flex;
+        align-items: center;
+        padding: 10px;
+        background-color: #07bc79;
+        border-color: #07bc79;
+      }
+      .input-area input[type="text"] {
+        flex: 1;
+        margin-left: 2px;
+        margin-right: 10px;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        font-size: 14px;
+      }
+      .input-area button {
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        font-size: 14px;
+        background-color: #110150;
+        color: #fff;
+        cursor: pointer;
+      }
+      .mic-icon {
+        width: 30px;
+        height: 30px;
+        margin-right: 10px;
+        cursor: pointer;
+      }
+      .selected-text {
+        margin-top: -10px;
+        padding: 10px;
+        border: 1px solid #000;
+        border-radius: 5px;
+        background-color: #fff;
+        font-size: 14px;
+        height: 50px;
+        width: 290px;
+        resize: none;
+        overflow-y: scroll;
+      }
+      
+    </style>
+  </head>
+  <body>
+<div>
+    <div class="header">
+      <img src="NubioAI.png" alt="Logo" title="Nubio AI" height="50px">
+    </div>
+    <div class="highlighted-text">
+        <h4>
+            <b>Selected Text:</b>
+        </h4>
+        <textarea class="selected-text" placeholder="Selected text will appear here"></textarea>
+    </div>
+    <div class="chat-area"></div>
+    <div class="input-area">
+      <img src="mic.png" alt="Microphone icon" class="mic-icon">
+      <input type="text" placeholder="Type your message here...">
+      <button>Send</button>
+    </div>
+    
+  </body>
+</html>
